@@ -125,21 +125,6 @@
 // }
 
 
-// let question1 = prompt("Летом тепло? (Да) (Нет) (Затрудняюсь)").toLocaleLowerCase();
-// let question2 = prompt("Вода мокрая? (Да) (Нет) (Затрудняюсь)").toLocaleLowerCase();
-// let question3 = prompt("Трава заленая? (Да) (Нет) (Затрудняюсь)").toLocaleLowerCase();
-// let x = 0;
-//     if (question1 === "да"){
-//         x = 2;
-//     } else if (question2 === "да"){
-//         x = x+2;
-//     } else if (question3 === "да"){
-//         x = x+2;
-//         alert(`Ваш бал за правильный ответ: ${x}`)
-//     } else {
-//     } 
-//     console.log();
-
 
     // let question1 = prompt("Летом тепло? (Да) (Нет) (Затрудняюсь)").toLocaleLowerCase();
     // let question2 = prompt("Вода мокрая? (Да) (Нет) (Затрудняюсь)").toLocaleLowerCase();

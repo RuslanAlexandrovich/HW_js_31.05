@@ -153,41 +153,57 @@
 
 
 
-    //  let feb = 28;
-    //  let day = +prompt("Введите день даты ");
-    //  let mounth = +prompt("Введите месяц даты:");
-    //  let year = +prompt("Введите год даты:");
+     let feb = 28;
+     let day = +prompt("Введите номер дня");
+     let mounth = +prompt("Введите номер месяца:");
+     let year = +prompt("Введите год в формате '2020' :");
 
-    //  if(day < 1 || day > 31 || mounth < 1 || mounth > 12){
-    //     alert("Внимательней вводите данные!")
-    //  } else if (year%4 == 0 && year%100 !==0 && mounth == 2 && day > 29 || year%100 == 0 && year%400 == 0 && mounth == 2 && day > 29){
-    //     alert("Этот год высокосный, в феврале 29 дней!")
-    //  } 
-    //   else{
-    //     calendar();
-    //  }
+     if(day < 1 || day > 31 || mounth < 1 || mounth > 12 || mounth%2 !== 0 && day >= 31){
+        alert("Внимательней вводите данные!")
+     } else if (year%4 == 0 && year%100 !==0 && mounth == 2 && day > 29 || year%100 == 0 && year%400 == 0 && mounth == 2 && day > 29){
+        alert("Этот год высокосный, в феврале 29 дней!")
+     } 
+      else{
+        calendar();
+     }
 
-    //  function calendar(){
+     function calendar(){
 
-    //     if (year%4 == 0 && year%100 !==0 || year%100 == 0 && year%400 == 0){
-    //         feb = 29;
-    //     } else {
-    //         feb = 28;
-    //     }
-
-    //     if (mounth == 2 && day == feb){
-    //         day = 1;
-    //         mounth = mounth+1;
-    //         year = year;
-    //     } else if (mounth == 12 && day == 31){
-    //         day = 1;
-    //         mounth = 1;
-    //         year = year + 1;   
-    //     } 
-    //       else{
-    //         day = day + 1;
-    //         mounth = mounth;
-    //         year = year;
-    //     }
-    //     alert(`Завтра будет ${day}.${mounth}.${year}`)
-    // }    
+        if (year%4 == 0 && year%100 !==0 || year%100 == 0 && year%400 == 0){
+            feb = 29;
+        } else {
+            feb = 28;
+        }
+        if (mounth == 2 && day == feb){
+            day = 1;
+            mounth = mounth+1;
+            year = year;
+        } 
+        else if(mounth == 2 && day > feb){
+            alert("В феврале меньше дней!")
+            day = "Начните";
+            mounth = "заново";
+            year = "пожалуйста!";
+        }
+        else if (mounth == 12 && day == 31){
+            day = 1;
+            mounth = 1;
+            year = year + 1;   
+        } 
+          else if (mounth == 1 && day == 30 || mounth == 3 && day == 30 || mounth == 5 && day == 30 || mounth == 7 && day == 30  || mounth == 9 && day == 30 || mounth == 11 && day == 30){
+            day = 1;
+            mounth = mounth + 1;
+            year = year;
+        } 
+        else if (mounth == 4 && day == 31 || mounth == 6 && day == 31 || mounth == 8 && day == 31 || mounth == 10  && day == 31){
+            day = 1;
+            mounth = mounth + 1;
+            year = year;
+        } 
+        else {
+            day = day + 1;
+            mounth = mounth;
+            year = year;
+        }
+        
+    }    alert(`Завтра будет ${day}.${mounth}.${year}`)
